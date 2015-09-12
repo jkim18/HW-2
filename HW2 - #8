@@ -1,0 +1,29 @@
+void setup() {
+  background(0);
+  size(500, 500);
+}
+
+int x = 20;
+int x2 = 20;
+int y = 20;
+int y2 = 20;
+void draw() {
+  while (x < 480) {
+    stroke (255);
+    strokeWeight(4);
+    line (x, y2, x2, y);
+    x = (x + 20);
+    y = (y + 20);
+  }
+  int x = 480;
+  int x2 = 480;
+  int y = 480;
+  int y2 = 480;
+  while (x > 0) {
+    stroke (255);
+    strokeWeight(3);
+    line (x, y2, x2, y);
+    x = (x - 20);
+    y = (y - 20);
+  }
+}
