@@ -1,0 +1,43 @@
+int x = 40;  //ball size
+int y = 40;
+
+int xPosA = 25;  //ball position
+int yPosA = 25;
+int xPosB = 475;
+int yPosB = 475;
+
+int xSpeedA = 3;
+int ySpeedA = 5;
+int xSpeedB = 4;
+int ySpeedB = 2;
+
+void setup() {
+  size(500, 500);
+}
+
+void draw() {
+  background(255);
+  noStroke();
+  ellipse(xPosA, yPosA, x, y);
+  ellipse(xPosB, yPosB, x, y);
+  xPosA += xSpeedA;
+  yPosA += ySpeedA;
+  xPosB += xSpeedB;
+  yPosB += ySpeedB;        
+  if (xPosA > width - x/2 || xPosA < x/2) {
+    xSpeedA = xSpeedA * -1;
+    fill(random(255), random(255), random(255));
+  }
+  if (yPosA > height - y/2 || yPosA < y/2) {
+    ySpeedA = ySpeedA * -1;
+    fill(random(255), random(255), random(255));    
+  }
+  if (xPosB > width - x/2 || xPosB < x/2) {
+    xSpeedB = xSpeedB * -1;  
+    fill(random(255), random(255), random(255));    
+  }
+  if (yPosB > height - y/2 || yPosB < y/2) {
+    ySpeedB = ySpeedB * -1;
+    fill(random(255), random(255), random(255));        
+  }
+}
